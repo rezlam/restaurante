@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Restaurante.Api.Models;
+using Restaurante.Api.Models.Validation;
 using Restaurante.Api.Repositories;
 
 namespace Restaurante.Api.Controllers
@@ -44,7 +45,9 @@ namespace Restaurante.Api.Controllers
         [HttpPost, Route("")]
         public async Task<IHttpActionResult> CreateRestaurant(Restaurant dto)
         {
-            // TODO: Validation
+            if (dto.TryValidateForCreate(out string validationMessage) == false) {
+                return BadRequest(validationMessage);
+            }
 
             try {
                 int id = await _repository.Create(dto);
@@ -88,7 +91,9 @@ namespace Restaurante.Api.Controllers
         [HttpPut, Route("{id:int}")]
         public async Task<IHttpActionResult> UpdateRestaurant(int id, Restaurant dto)
         {
-            // TODO: Model validation
+            if (dto.TryValidateForUpdate(out string validationMessage) == false) {
+                return BadRequest(validationMessage);
+            }
 
             if (id != dto.Id) {
                 return BadRequest($"Validation failed for property '{nameof(id)}': ID mismatch.");

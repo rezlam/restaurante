@@ -92,10 +92,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DishesController.cs" />
+    <Compile Include="Controllers\RestaurantsController.cs" />
+    <Compile Include="DataMappers\DishDataMapper.cs" />
+    <Compile Include="DataMappers\RestaurantDataMapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dish.cs" />
+    <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DishRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\RestaurantRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -108,8 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Restaurante.Persistence\Restaurante.Persistence.csproj">

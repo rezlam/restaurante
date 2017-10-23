@@ -1,0 +1,12 @@
+.jumbotron {
+    background: #fff url('/assets/images/burger-hero-bg.jpg') no-repeat fixed center;
+}
+
+.jumbotron h1 {
+    color: #eee;
+    margin-top: 230px;
+}
+
+.jumbotron p {
+    color: #eee;
+}

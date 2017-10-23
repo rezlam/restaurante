@@ -1,1 +1,105 @@
 <h1>Restaurantes</h1>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Pesquisar</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <p>
+                <label for="name">Nome do restaurante</label>
+                <input type="text" class="form-control" id="Name" placeholder="">
+            </p>
+            <p>
+                <button type="buttom" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar</button>
+                <button type="buttom" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Cadastrar novo restaurante</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Restaurante</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Quero Carne</td>
+            <td><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+            <td><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+        </tr>
+        <tr>
+            <td>King's Rock</td>
+            <td><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+            <td><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+        </tr>
+        <tr>
+            <td>Hamburgueria do Barão</td>
+            <td><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+            <td><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+        </tr>
+    </tbody>
+    <th></th>
+</table>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Cadastrar</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="Name" class="col-sm-1 control-label">Nome</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="Name" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-11">
+                        <p>
+                            <button type="buttom" class="btn btn-success">Salvar</button>
+                            <button type="buttom" class="btn btn-default">Cancelar</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Editar</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="Id" class="col-sm-1 control-label">Id</label>
+                <div class="col-sm-11">
+                    <input type="hidden" id="Id" value="2">
+                    <p class="form-control-static">2</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Name" class="col-sm-1 control-label">Nome</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" id="Name" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-11">
+                    <p>
+                        <button type="buttom" class="btn btn-success">Salvar</button>
+                        <button type="buttom" class="btn btn-default">Cancelar</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

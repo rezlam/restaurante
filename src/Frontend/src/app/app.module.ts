@@ -9,6 +9,8 @@ import { HomeComponent } from './home.component';
 import { NavbarComponent } from "./navbar.component";
 import { RestaurantComponent } from "./restaurant.component";
 import { DishComponent } from "./dish.component";
+import { RestaurantService } from "./restaurant.service";
+import { DishService } from "./dish.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { DishComponent } from "./dish.component";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [RestaurantService, DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

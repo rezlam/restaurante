@@ -11,9 +11,13 @@ export class RestaurantService {
     constructor(private http: Http) {
     }
 
-    listRestaurants(): Promise<Restaurant[]> {
+    listRestaurants(query: string): Promise<Restaurant[]> {
+        let endpoint = this.baseUrl;
+        if (query && query.length > 0) {
+            endpoint += `?filter=${encodeURIComponent(query)}`;
+        }
         return this.http
-                   .get(this.baseUrl, { headers: this.headers })
+                   .get(endpoint, { headers: this.headers })
                    .toPromise()
                    .then(res => res.json() as Restaurant[])
                    .catch(this.handlesError);
@@ -36,8 +40,8 @@ export class RestaurantService {
                    .catch(this.handlesError);
     }
 
-    updateRestaurant(id: number, dto: Restaurant): Promise<void> {
-        const endpoint = `${this.baseUrl}/${id}`;
+    updateRestaurant(dto: Restaurant): Promise<void> {
+        const endpoint = `${this.baseUrl}/${dto.Id}`;
         return this.http
                    .put(endpoint, JSON.stringify(dto), { headers: this.headers })
                    .toPromise()

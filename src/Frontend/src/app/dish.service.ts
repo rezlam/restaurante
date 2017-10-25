@@ -36,8 +36,8 @@ export class DishService {
                    .catch(this.handlesError);
     }
 
-    updateDish(id: number, dto: Dish): Promise<void> {
-        const endpoint = `${this.baseUrl}/${id}`;
+    updateDish(dto: Dish): Promise<void> {
+        const endpoint = `${this.baseUrl}/${dto.Id}`;
         return this.http
                    .put(endpoint, JSON.stringify(dto), { headers: this.headers })
                    .toPromise()

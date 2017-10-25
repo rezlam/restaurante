@@ -37,6 +37,8 @@ namespace Restaurante.Persistence.Models.Maps
                 .HasColumnType("decimal")
                 .HasPrecision(8, 2)
                 .IsRequired();
+
+            this.HasRequired(p => p.Restaurant);
         }
     }
 }

@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201710142030086_AddsDishesEntity.Designer.cs">
       <DependentUpon>201710142030086_AddsDishesEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710251143362_AddRestaurantPropertyToDishEntity.cs" />
+    <Compile Include="Migrations\201710251143362_AddRestaurantPropertyToDishEntity.Designer.cs">
+      <DependentUpon>201710251143362_AddRestaurantPropertyToDishEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\DishEntity.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710142030086_AddsDishesEntity.resx">
       <DependentUpon>201710142030086_AddsDishesEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710251143362_AddRestaurantPropertyToDishEntity.resx">
+      <DependentUpon>201710251143362_AddRestaurantPropertyToDishEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

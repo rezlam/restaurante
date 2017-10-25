@@ -11,5 +11,6 @@ namespace Restaurante.Persistence.Models
         public int RestaurantId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
+        public virtual RestaurantEntity Restaurant { get; set; }
     }
 }

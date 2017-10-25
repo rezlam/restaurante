@@ -1,7 +1,7 @@
 export class Dish {
     Id: number;
-    RestaurnatId: number;
-    RestaurnatName: string;
+    RestaurantId: number;
+    RestaurantName: string;
     Name: string;
     Price: number;
 }

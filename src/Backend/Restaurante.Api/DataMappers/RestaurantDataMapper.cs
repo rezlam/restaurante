@@ -58,43 +58,5 @@ namespace Restaurante.Api.DataMappers
 
             return destination;
         }
-
-        public static List<Dish> MapToDishDto(this RestaurantEntity self)
-        {
-            if (self == null) {
-                throw new ArgumentNullException(nameof(self));
-            }
-
-            var destination = new List<Dish>();
-
-            if (self.Dishes != null) {
-                foreach (var item in self.Dishes) {
-                    var dto = item.MapToDto();
-                    dto.Name = self.Name;
-                    destination.Add(dto);
-                }
-            }
-
-            return destination;
-        }
-
-        public static List<Dish> MapToDishDto(this List<RestaurantEntity> self)
-        {
-            if (self == null) {
-                throw new ArgumentNullException(nameof(self));
-            }
-
-            var destination = new List<Dish>();
-
-            if (self.Count < 1) {
-                return destination;
-            }
-
-            foreach (var item in self) {
-                destination.AddRange(item.MapToDishDto());
-            }
-
-            return destination;
-        }
     }
 }

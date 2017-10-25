@@ -18,16 +18,15 @@ namespace Restaurante.Api.Repositories
         public async Task<List<Dish>> List()
         {
             try {
-                var entities = await _db.Restaurants.Where(p => p.Active == true)
-                                                    .Where(p => p.Dishes.Count > 0)
-                                                    .Include(p => p.Dishes)
-                                                    .ToListAsync();
+                var entities = await _db.Dishes.Where(p => p.Active == true)
+                                               .Include(p => p.Restaurant)
+                                               .ToListAsync();
 
                 if (entities == null) {
                     return new List<Dish>();
                 }
 
-                return entities.MapToDishDto();
+                return entities.MapToDto();
             } catch (Exception ex) {
                 throw ex;
             }

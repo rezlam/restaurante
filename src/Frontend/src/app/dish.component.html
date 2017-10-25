@@ -1,7 +1,7 @@
 <h1>Pratos</h1>
 
 <p>
-    <button type="buttom" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Cadastrar novo prato</button>
+    <a rel="buttom" class="btn btn-success" [routerLink]="['/pratos/cadastro']"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Cadastrar novo prato</a>
 </p>
 
 <table class="table table-striped" *ngIf="dishes">
@@ -19,103 +19,9 @@
             <td>{{dish.RestaurantName}}</td>
             <td>{{dish.Name}}</td>
             <td>{{dish.Price}}</td>
-            <td>
-                <a href="#"(click)="gotoUpdateDish(dish)"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-            </td>
-            <td>
-                <a href="#" (click)="deleteDish(dish)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-            </td>
+            <td><a [routerLink]="['/pratos/cadastro', dish.Id]"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+            <td><a (click)="deleteDish(dish)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
         </tr>
     </tbody>
     <th></th>
 </table>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Cadastrar</h3>
-    </div>
-    <div class="panel-body">
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label for="RestaurantId" class="col-sm-1 control-label">Restaurante</label>
-                <div class="col-sm-11">
-                    <select class="form-control">
-                        <option></option>
-                        <option value="1">Quero Carne</option>
-                        <option value="2">King's Rock</option>
-                        <option value="3">Hamburgueria do Barão</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Name" class="col-sm-1 control-label">Prato</label>
-                <div class="col-sm-11">
-                    <input type="text" class="form-control" id="Name" placeholder="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Price" class="col-sm-1 control-label">Preço</label>
-                <div class="col-sm-11">
-                    <div class="input-group">
-                        <div class="input-group-addon">R$</div>
-                        <input type="text" class="form-control" id="Price" placeholder="">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-1 col-sm-11">
-                    <p>
-                        <button type="buttom" class="btn btn-success">Salvar</button>
-                        <button type="buttom" class="btn btn-default">Cancelar</button>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Editar</h3>
-    </div>
-    <div class="panel-body">
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label for="Id" class="col-sm-1 control-label">Id</label>
-                <div class="col-sm-11">
-                    <input type="hidden" id="Id" value="2">
-                    <p class="form-control-static">2</p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="RestaurantName" class="col-sm-1 control-label">Restaurante</label>
-                <div class="col-sm-11">
-                    <p class="form-control-static">King's Rock</p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Name" class="col-sm-1 control-label">Prato</label>
-                <div class="col-sm-11">
-                    <input type="text" class="form-control" id="Name" placeholder="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="Price" class="col-sm-1 control-label">Preço</label>
-                <div class="col-sm-11">
-                    <div class="input-group">
-                        <div class="input-group-addon">R$</div>
-                        <input type="text" class="form-control" id="Price" placeholder="">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-1 col-sm-11">
-                    <p>
-                        <button type="buttom" class="btn btn-success">Salvar</button>
-                        <button type="buttom" class="btn btn-default">Cancelar</button>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

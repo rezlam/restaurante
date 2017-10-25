@@ -10,8 +10,10 @@ import { NavbarComponent } from "./navbar.component";
 import { RestaurantComponent } from "./restaurant.component";
 import { RestaurantCreateComponent } from "./restaurant-create.component";
 import { RestaurantUpdateComponent } from "./restaurant-update.component";
-import { DishComponent } from "./dish.component";
 import { RestaurantService } from "./restaurant.service";
+import { DishComponent } from "./dish.component";
+import { DishCreateComponent } from "./dish-create.component";
+import { DishUpdateComponent } from "./dish-update.component";
 import { DishService } from "./dish.service";
 
 @NgModule({
@@ -22,7 +24,9 @@ import { DishService } from "./dish.service";
     RestaurantComponent,
     RestaurantCreateComponent,
     RestaurantUpdateComponent,
-    DishComponent
+    DishComponent,
+    DishCreateComponent,
+    DishUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,8 @@ import { DishService } from "./dish.service";
       { path: 'restaurantes/cadastro/:id', component: RestaurantUpdateComponent },
       { path: 'restaurantes/cadastro', component: RestaurantCreateComponent },
       { path: 'pratos', component: DishComponent },
+      { path: 'pratos/cadastro/:id', component: DishUpdateComponent },
+      { path: 'pratos/cadastro', component: DishCreateComponent },
       { path: '**', redirectTo: 'home' }
     ]),
     FormsModule,

@@ -18,6 +18,7 @@ namespace Restaurante.Api.DataMappers
             var destination = new Dish() {
                 Id = self.Id,
                 RestaurantId = self.RestaurantId,
+                RestaurantName = self.Restaurant.Name,
                 Name = self.Name,
                 Price = self.Price
             };
